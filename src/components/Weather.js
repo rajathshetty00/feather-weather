@@ -1,24 +1,30 @@
-import React, { Component } from "react";
-class Weather extends Component {
-  state = {};
-  render() {
-    var person = null;
+import React from "react";
+const Weather = props => {
+  var person = null;
 
-    if (this.props.city && this.props.country) {
-      person = (
-        <div>
-          <p>
-            Location: {this.props.city},{this.props.country}.
-          </p>
-          <p>Temperature: {this.props.temperature}</p>
-          <p>Humidity: {this.props.humidity}</p>
-          <p> Conditions: {this.props.description}</p>
-          <p>{this.props.error}</p>
-        </div>
-      );
-    }
-    return person;
+  if (props.weatherData.city && props.weatherData.country) {
+    person = (
+      <div className="weather__info">
+        <p className="weather__key">
+          <span className="weather__value">Location:</span>
+          {props.weatherData.city},{props.weatherData.country}.
+        </p>
+        <p className="weather__key">
+          <span className="weather__value">Temperature:</span>
+          {props.weatherData.temperature}℃
+        </p>
+        <p className="weather__key">
+          <span className="weather__value">Humidity:</span>
+          {props.weatherData.humidity}%
+        </p>
+        <p className="weather__key">
+          <span className="weather__value">Conditions:</span>
+          {props.weatherData.description}
+        </p>
+      </div>
+    );
   }
-}
+  return person;
+};
 
 export default Weather;

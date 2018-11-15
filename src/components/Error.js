@@ -1,19 +1,16 @@
-import React, { Component } from "react";
-class Error extends Component {
-  state = {};
-  render() {
-    var error = null;
-    if (this.props.error) {
-      error = (
-        <div>
-          <p />
-          {this.props.error}
-        </div>
-      );
-    }
-
-    return error;
+import React from "react";
+const Error = props => {
+  var error = null;
+  if (props.error) {
+    error = (
+      <div className="weather__error">
+        <p />
+        {props.error}
+      </div>
+    );
   }
-}
+
+  return error;
+};
 
 export default Error;

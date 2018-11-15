@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import "./App.css";
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 import Error from "./components/Error";
 const API_KEYS = "4844304fe2f5e4e608e39b2491dc2c63";
-//const URL = "https://samples.openweathermap.org/data/2.5/weather?q=London&appid=b6907d289e10d714a6e88b30761fae22"
 class App extends Component {
   state = {
     city: null,
@@ -44,17 +42,23 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Titles />
-        <Form getWeather={this.getWeather} />
-        <Weather
-          city={this.state.city}
-          country={this.state.country}
-          temperature={this.state.temperature}
-          humidity={this.state.humidity}
-          description={this.state.description}
-        />
-        <Error error={this.state.error} />
+      <div>
+        <div className="wrapper">
+          <div className="main">
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-5 title-container">
+                  <Titles />
+                </div>
+                <div className="col-xs-7 form-container">
+                  <Form getWeather={this.getWeather} />
+                  <Weather weatherData={this.state} />
+                  <Error error={this.state.error} /> */
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
