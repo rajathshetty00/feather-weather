@@ -102,7 +102,7 @@ input[type="text"]:focus {
 } */
 
 button {
-  box-shadow: 0 0 8px 1px #aaa;
+  box-shadow: 0 0 1px #aaa;
   border: none;
   padding: 4px 24px;
   margin: 0 2px;
